@@ -1,0 +1,196 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kyshess |  Espaço da Moda</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+            :root {
+                --primaria: #000000;
+                --secundaria: #ffffff;
+                --cinza-claro: #f4f4f4;
+                --texto: #333;
+            }
+
+            * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
+            body { background-color: var(--secundaria); color: var(--texto); line-height: 1.6; }
+
+            /* Barra de Aviso */
+            .top-bar {
+                background: var(--primaria);
+                color: white;
+                font-size: 11px;
+                text-align: center;
+                padding: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            /* Header Centralizado */
+            header {
+                background: white;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid #eee;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+            .logo-box { text-align: center; }
+            .logo { font-weight: 900; letter-spacing: 5px; font-size: 1.4rem; line-height: 1; }
+            .unidade-tag { font-size: 10px; color: #666; text-transform: uppercase; margin-top: 5px; font-weight: bold; }
+
+            /* Hero Section */
+            .hero {
+                background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://lh3.googleusercontent.com/sitesv/AA5AbUAAdm6938lfZGI3Q37MGjpPyDV1Qjg-VpO2ditZkfLQ4nuUykrb1MUeWgBCkOEzjA3ZmHUymDFnDPpViF1B8ESao1BkbnQV5vIAYl4YBgALaZbEGqTURsbVtcl9vQr4F-TZ0JvHKfDPxpfM5n7iO5hOLkFLBbgnAI2IDBvghaO_Vv40VThp2h3t=w1280');
+                background-size: cover;
+                background-position: center;
+                height: 45vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                text-align: center;
+                padding: 20px;
+            }
+            .hero h2 { font-size: 1.8rem; margin-bottom: 10px; text-transform: uppercase; }
+            .btn-cta {
+                background: white;
+                color: black;
+                padding: 15px 30px;
+                text-decoration: none;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                border-radius: 2px;
+            }
+
+            /* Vantagens */
+            .features {
+                display: flex;
+                overflow-x: auto;
+                padding: 25px 10px;
+                background: var(--cinza-claro);
+                gap: 20px;
+                scrollbar-width: none;
+            }
+            .features::-webkit-scrollbar { display: none; }
+            .feature-item { min-width: 200px; text-align: center; font-size: 0.8rem; }
+            .feature-item i { font-size: 1.5rem; margin-bottom: 10px; display: block; color: var(--primaria); }
+
+            /* Vitrine Local */
+            .shop-section { padding: 40px 15px; }
+            .section-title { margin-bottom: 25px; text-transform: uppercase; font-size: 1rem; border-left: 4px solid black; padding-left: 10px; }
+            .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .product-card { position: relative; }
+            .product-img { width: 100%; aspect-ratio: 3/4; background: #eee; border-radius: 4px; background-size: cover; background-position: center; }
+            .tag-new { position: absolute; top: 10px; left: 10px; background: black; color: white; padding: 2px 8px; font-size: 10px; }
+            .product-info { padding: 10px 0; }
+            .product-name { font-size: 0.85rem; margin-bottom: 5px; color: #555; }
+            .product-price { font-weight: 700; font-size: 1rem; }
+
+            /* Seção de Endereço/Contato */
+            .local-info {
+                padding: 40px 20px;
+                background: #fff;
+                text-align: center;
+                border-top: 1px solid #eee;
+            }
+            .local-info h3 { font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+            .info-item { margin-bottom: 20px; font-size: 0.9rem; }
+            .info-item i { display: block; margin-bottom: 8px; font-size: 1.2rem; }
+            .btn-maps {
+                display: inline-block;
+                margin-top: 10px;
+                background: #f4f4f4;
+                color: #333;
+                padding: 10px 20px;
+                text-decoration: none;
+                font-size: 0.8rem;
+                font-weight: bold;
+                border-radius: 4px;
+            }
+
+            /* WhatsApp Float */
+            .whatsapp-float {
+                position: fixed;
+                bottom: 30px;
+                right: 25px;
+                background: #25d366;
+                color: white;
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 30px;
+                box-shadow: 2px 5px 15px rgba(0,0,0,0.2);
+                z-index: 1000;
+                text-decoration: none;
+            }
+
+            @media (min-width: 768px) {
+                .product-grid { grid-template-columns: repeat(4, 1fr); }
+                .features { justify-content: center; }
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="top-bar">Loja Oficial Kyshess</div>
+
+        <header>
+            <div class="logo-box">
+                <div class="logo">KYSHESS</div>
+                <div class="unidade-tag"> Espaço da Moda</div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h2>MODA MASCULINA</h2>
+            <p>A loja Kyshess oficial disponível perto de você.</p><br>
+        </section>
+
+        <section class="features">
+            <div class="feature-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <strong>VISITE NOSSA LOJA</strong>
+                <p>Prove as peças no local</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-phone"></i>
+                <strong>PEDIDOS PELO WHATSAPP</strong>
+                <p>Atendimento personalizado</p>
+            </div>
+        </section>
+
+        <section class="local-info">
+            <h3>Informações da Loja</h3>
+            
+            <div class="info-item">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <strong>Endereço:</strong><br>Av. Archelau de Almeida Tôrres, 1964 - Iguaçu, Araucária - PR, 83701-145<br>
+                <a href="https://maps.app.goo.gl/Vb5Q9mqsZPYjHS7z5" target="_blank" class="btn-maps">VER NO GOOGLE MAPS</a>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <strong>Telefone / WhatsApp:</strong><br>
+                (41) 99817-9397<br>
+                <a href="https://api.whatsapp.com/send?phone=5541998179397&text=Ol%C3%A1,%20quero%20comprar%20Kyshess!" target="_blank" class="btn-maps">CHAMAR NO WHATSAPP</a>
+            </div>
+        </section>
+
+        <footer style="padding: 40px 20px; background: #fff; border-top: 1px solid #eee; text-align: center;">
+            <div class="logo" style="margin-bottom: 10px; font-size: 1.2rem;">KYSHESS</div>
+            <p style="font-size: 11px; color: #777;">Siga-nos @kyshess</p>
+            <p style="font-size: 9px; color: #aaa; margin-top: 20px;">© 2026 Kyshess</p>
+        </footer>
+
+    </body>
+    </html>
